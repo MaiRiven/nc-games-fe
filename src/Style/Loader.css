@@ -1,0 +1,12 @@
+.loader{
+    margin: 25px;
+    animation-name: spin-icon;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-icon{
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,15 @@
+:root {
+  --light-shades: #FAF9E8;
+  --light-accent: #E1B05E;
+  --main-color: #59C9E9;
+  --dark-accent: #7583b6;
+  --dark-shades: #060632;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
+  background: var(--light-shades);
+  color: var(--dark-accent);
+}

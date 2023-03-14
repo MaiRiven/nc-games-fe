@@ -9,7 +9,8 @@ export const Comments = ({ review_id }) => {
 
     useEffect(() => {
         setIsLoading(true)
-        getComments(review_id).then(comments => {
+        getComments(review_id)
+        .then(comments => {
             setComments(comments)
             setIsLoading(false)
         })
@@ -26,7 +27,7 @@ export const Comments = ({ review_id }) => {
                     })}
                     </ol> 
                 ) : (
-                    <p>No comments so far...</p>
+                    <p>No comments yet...</p>
                 ))
             }
         </section>

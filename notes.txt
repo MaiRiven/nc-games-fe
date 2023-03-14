@@ -1,0 +1,2 @@
+old date format
+{<p>{new Date(comment.created_at).toDateString()}</p>}

@@ -15,7 +15,6 @@ header {
   width: 100%;
 }
 
-
 .reviewBox{
   display: flex;
   flex-wrap: wrap;
@@ -31,11 +30,30 @@ header {
   background-color: var(--light-shades);
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
   text-align: center;
   width: 300px;
+  max-width: 90vw;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .reviewBox {
+    max-width: 1200px;
+  }
+  
+  .reviewCard {
+    width: 400px;
+    max-width: 30vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviewCard {
+    width: 300px;
+    max-width: 25vw;
+  }
 }
 
 .reviewCard h3 {
@@ -52,8 +70,58 @@ header {
 .reviewCard img {
   max-width: 100%;
   border-radius: 5px;
+  margin: 10px 0;
 }
 
 .reviewCard:hover{
-  background-color: var(--light-accent);
+  background-color: rgb(234, 187, 125);
+  color: var(--dark-shades);
 }
+
+.indReview {
+  background-color: var(--light-shades);
+  color: var(--dark-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center
+}
+
+.indReview h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 2px;
+  color: var(--dark-shades)
+}
+
+.indReview p {
+  font-size: 1rem;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.indReview img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.indReview .indReviewBody {
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.designerInfo {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  width: 60%;
+}
+

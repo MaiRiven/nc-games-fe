@@ -10,3 +10,10 @@ export const getReviews = () => {
         return data.reviews
     });
 };
+
+export const getComments = (reviewID) => {
+    return api.get(`/reviews/${reviewID}/comments`)
+    .then(({data}) => {
+        return data.comments;
+    });
+};

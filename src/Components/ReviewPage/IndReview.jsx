@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getReview } from '../../utils/api'
 import { useParams } from 'react-router-dom';
 import { Loader } from '../Loader';
+import { Comments } from './Comments';
 import '../../Style/App.css';
 
 export const IndReview = () => {
@@ -21,11 +22,14 @@ export const IndReview = () => {
             setIsLoading(false);
         });
     }, [review_id] )
+
+
     return isLoading ? (
         <section className='indReview'>
             <Loader />
         </section>
     ) : (
+    <>   
         <section className='indReview'>
             <h2>{review.title}</h2>
             <section className="designerInfo">
@@ -40,6 +44,10 @@ export const IndReview = () => {
             <p>Written by {review.owner}</p>
             <p className='indReviewBody'>{review.review_body}</p>
         </section>
-    )
-
-}
+        
+        <section className='commentSection'>
+            <Comments review_id={review_id}/>
+        </section>
+    </>
+    );
+};

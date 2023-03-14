@@ -74,8 +74,9 @@ header {
 }
 
 .reviewCard:hover{
-  background-color: rgb(234, 187, 125);
+  background-color: var(--light-accent);
   color: var(--dark-shades);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .indReview {
@@ -125,3 +126,44 @@ header {
   width: 60%;
 }
 
+.commentSection {
+  margin-top: 20px;
+  }
+  
+  .commentCard {
+  background-color: var(--light-shades);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 10px;
+  }
+  
+  .commentCard p {
+  font-size: 1rem;
+  margin: 5px 0;
+  }
+  
+  .commentBody {
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: left;
+  }
+  
+  .commentInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  }
+  
+  .commentInfo p {
+  font-size: 0.8rem;
+  margin: 0;
+  }
+
+  .commentSection{
+    background-color: var(--light-shades);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+  }

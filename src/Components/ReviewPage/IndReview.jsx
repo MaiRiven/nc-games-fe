@@ -3,6 +3,7 @@ import { getReview } from '../../utils/api'
 import { useParams } from 'react-router-dom';
 import { Loader } from '../Loader';
 import { Comments } from './Comments';
+import { VoteButtons } from './VoteButtons';
 import '../../Style/App.css';
 
 export const IndReview = () => {
@@ -41,7 +42,15 @@ export const IndReview = () => {
                 src={review.review_img_url}
                 alt="game"
             />
-            <p>Written by {review.owner}</p>
+            <section className='reviewInfo'>
+                <p>Written by {review.owner}</p>
+                <p>Votes: {review.votes}</p>
+                <VoteButtons
+                    review={review}
+                    review_id={review_id} 
+                    setReview={setReview}
+                />
+            </section>
             <p className='indReviewBody'>{review.review_body}</p>
         </section>
         

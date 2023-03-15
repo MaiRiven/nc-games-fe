@@ -1,7 +1,3 @@
-old date format
-{<p>{new Date(comment.created_at).toDateString()}</p>}
-
-
 import { useState } from 'react';
 import { voteOnReview } from '../../utils/api';
 import upvote from '../../Assetts/upvote.png';
@@ -10,7 +6,6 @@ import greenvote from '../../Assetts/greenvote.png';
 import redvote from '../../Assetts/redvote.png';
 import greyedup from '../../Assetts/greyedup.png';
 import greyeddown from '../../Assetts/greyeddown.png';
-
 
 export const VoteButtons = ({review, review_id, setReview}) => {
 

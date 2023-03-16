@@ -24,7 +24,6 @@ export const IndReview = () => {
         });
     }, [review_id] )
 
-
     return isLoading ? (
         <section className='indReview'>
             <Loader />
@@ -44,11 +43,10 @@ export const IndReview = () => {
             />
             <section className='reviewInfo'>
                 <p>Written by {review.owner}</p>
-                <p>Votes: {review.votes}</p>
                 <VoteButtons
                     review={review}
-                    review_id={review_id} 
-                    setReview={setReview}
+                    review_id={review_id}
+                    votes={review.votes}
                 />
             </section>
             <p className='indReviewBody'>{review.review_body}</p>

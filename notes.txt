@@ -1,7 +1,6 @@
 old date format
 {<p>{new Date(comment.created_at).toDateString()}</p>}
 
-
 import { useState } from 'react';
 import { voteOnReview } from '../../utils/api';
 import upvote from '../../Assetts/upvote.png';
@@ -11,10 +10,9 @@ import redvote from '../../Assetts/redvote.png';
 import greyedup from '../../Assetts/greyedup.png';
 import greyeddown from '../../Assetts/greyeddown.png';
 
-
 export const VoteButtons = ({review, review_id, setReview}) => {
 
-    const [buttonClicked, setButtonClicked] = useState({up:false, down:false});
+    const [voteClicked, setVoteClicked] = useState({up:false, down:false});
     const [upButtonImageSrc, setUpButtonImageSrc] = useState(upvote);
     const [downButtonImageSrc, setDownButtonImageSrc] = useState(downvote);
 
@@ -41,6 +39,69 @@ export const VoteButtons = ({review, review_id, setReview}) => {
 
     return(
         <>
+        <section>
+            <button 
+            disabled={buttonClicked.up}
+            className="ReviewVoteButton" 
+            onClick={() => voteHandler(1)}>
+                <img src={buttonClicked.up ? greenvote : upvote } alt="Up Vote" />
+            </button>
+            <button 
+            disabled={buttonClicked.down}
+            className="ReviewVoteButton" 
+            onClick={() => voteHandler(-1)}>
+                <img src={buttonClicked.down ? redvote : downvote } alt='Down Vote' />
+            </button>
+        </section>
+        </>
+    )
+}
+
+
+
+import { useState } from 'react';
+import { voteOnReview } from '../../utils/api';
+import upvote from '../../Assetts/upvote.png';
+import downvote from '../../Assetts/downvote.png';
+import greenvote from '../../Assetts/greenvote.png';
+import redvote from '../../Assetts/redvote.png';
+import greyedup from '../../Assetts/greyedup.png';
+import greyeddown from '../../Assetts/greyeddown.png';
+
+export const VoteButtons = ({review, review_id, setReview}) => {
+
+    const [buttonClicked, setButtonClicked] = useState({up:false, down:false});
+    const [upButtonImageSrc, setUpButtonImageSrc] = useState(upvote);
+    const [downButtonImageSrc, setDownButtonImageSrc] = useState(downvote);
+    const [voteCount, setVoteCount] = useState(0);
+
+
+    const voteHandler = (inc) => {
+        const newVotes = review.votes + inc;
+        setReview({...review, votes: newVotes});
+        setButtonClicked({ up: inc === 1, down: inc === -1});
+        setUpButtonImageSrc(inc === 1 ? greenvote : greyedup);
+        setDownButtonImageSrc(inc === -1 ? redvote : greyeddown);
+    
+        voteOnReview(review_id, inc)
+        .then(({ votes }) => {
+            setVoteCount(votes);
+            const updatedReview = { ...review, votes: votes};
+            setReview(updatedReview);
+        })
+        .catch((err) => {
+            const updatedReview = { ...review, votes: review.votes - inc};
+            setReview(updatedReview);
+            })
+            .finally (() => {
+                setUpButtonImageSrc(upvote);
+                setDownButtonImageSrc(downvote);
+            });
+        };
+
+    return(
+        <>
+        <p>Votes: {review.votes}</p>
         <section>
             <button 
             disabled={buttonClicked.up}

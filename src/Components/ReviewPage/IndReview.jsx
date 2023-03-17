@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { getReview } from '../../utils/api'
 import { useParams } from 'react-router-dom';
 import { Loader } from '../Loader';
-import { Comments } from './Comments';
+import { Comments } from '../Comments/Comments';
+import { AddComment } from '../Comments/AddComment';
 import '../../Style/App.css';
 
 export const IndReview = () => {
@@ -47,6 +48,7 @@ export const IndReview = () => {
         
         <section className='commentSection'>
             <Comments review_id={review_id}/>
+            <AddComment />
         </section>
     </>
     );

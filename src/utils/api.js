@@ -32,9 +32,16 @@ export const getComments = (reviewID) => {
 
 
 
-export const addComment = (reviewID, username, body) => {
+export const postComment = (reviewID, username, body) => {
     return api.post(`/reviews/${reviewID}/comments`, { username, body })
     .then(({ data }) => {
-        return data.comment;
+        return data.comments;
+    });
+};
+
+export const getUsers = () => {
+    return api.get('/users')
+    .then(({ data }) => {
+        return data.users;
     });
 };

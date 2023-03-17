@@ -128,42 +128,73 @@ header {
 
 .commentSection {
   margin-top: 20px;
-  }
+}
   
-  .commentCard {
+.commentCard {
   background-color: var(--light-shades);
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   padding: 10px;
-  }
+}
   
-  .commentCard p {
+.commentCard p {
   font-size: 1rem;
   margin: 5px 0;
-  }
+}
   
-  .commentBody {
+.commentBody {
   font-size: 1rem;
   margin: 10px 0;
   text-align: left;
-  }
+}
   
-  .commentInfo {
+.commentInfo {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  }
+}
   
-  .commentInfo p {
+.commentInfo p {
   font-size: 0.8rem;
   margin: 0;
-  }
+}
 
-  .commentSection{
+.commentSection{
     background-color: var(--light-shades);
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     padding: 10px;
-  }
+}
+
+.reviewInfo {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.ReviewVoteButton {
+  background-color: var(--light-shades);
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReviewVoteButton img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.errormessage{
+  display: flex;
+  margin-top: 5px;
+  color: rgb(89, 8, 8);
+}

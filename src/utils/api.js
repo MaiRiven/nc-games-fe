@@ -24,3 +24,10 @@ export const getComments = (reviewID) => {
         return data.comments;
     });       
 };
+
+export const voteOnReview = (review_id, inc_votes) => {
+    return api.patch(`/reviews/${review_id}`, { inc_votes })
+    .then(({ data }) => {
+        return data.review;
+    });
+};

@@ -24,3 +24,17 @@ export const getComments = (reviewID) => {
         return data.comments;
     });       
 };
+
+
+
+
+
+
+
+
+export const addComment = (reviewID, username, body) => {
+    return api.post(`/reviews/${reviewID}/comments`, { username, body })
+    .then(({ data }) => {
+        return data.comment;
+    });
+};

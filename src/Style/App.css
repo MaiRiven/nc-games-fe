@@ -1,6 +1,6 @@
 .App{
   text-align: center;
-  background-color: var(--dark-accent);
+  background-color: var(--light-shades);
   color: var(--dark-accent);
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ header {
 }
 
 .reviewCard:hover{
-  background-color: var(--light-accent);
+  background-color: var(--highlight-shade);
   color: var(--dark-shades);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }

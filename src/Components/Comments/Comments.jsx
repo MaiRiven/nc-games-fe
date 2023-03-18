@@ -2,19 +2,21 @@ import { useEffect, useState } from 'react';
 import { getComments } from '../../utils/api';
 import { CommentCard } from './CommentCard';
 import { Loader } from '../Loader';
+import { AddComment } from './AddComment';
 
 export const Comments = ({ review_id }) => {
     const [comments, setComments] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+
 
     useEffect(() => {
-        setIsLoading(true)
+        setIsLoading(true);
         getComments(review_id)
         .then(comments => {
+            setIsLoading(false);
             setComments(comments)
-            setIsLoading(false)
         })
-    }, [review_id])
+    }, [review_id]);
 
     return ( 
         <section className='commentsBox'>

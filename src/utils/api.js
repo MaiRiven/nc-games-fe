@@ -24,10 +24,22 @@ export const getComments = (reviewID) => {
         return data.comments;
     });       
 };
+export const postComment = (reviewID, username, body) => {
+    return api.post(`/reviews/${reviewID}/comments`, { username, body })
+    .then(({ data }) => {
+        return data.comments;
+    });
+};
+
+export const getUsers = () => {
+    return api.get('/users')
+    .then(({ data }) => {
+        return data.users;
 
 export const voteOnReview = (review_id, inc_votes) => {
     return api.patch(`/reviews/${review_id}`, { inc_votes })
     .then(({ data }) => {
         return data.review;
+
     });
 };

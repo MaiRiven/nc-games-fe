@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { getReview } from '../../utils/api'
 import { useParams } from 'react-router-dom';
 import { Loader } from '../Loader';
-import { Comments } from './Comments';
+import { Comments } from '../Comments/Comments';
+import { AddComment } from '../Comments/AddComment';
 import { VoteButtons } from './VoteButtons';
 import '../../Style/App.css';
 
@@ -29,7 +30,7 @@ export const IndReview = () => {
             <Loader />
         </section>
     ) : (
-    <>   
+    <div className='indReviewContainer'>
         <section className='indReview'>
             <h2>{review.title}</h2>
             <section className="designerInfo">
@@ -52,9 +53,12 @@ export const IndReview = () => {
             <p className='indReviewBody'>{review.review_body}</p>
         </section>
         
-        <section className='commentSection'>
-            <Comments review_id={review_id}/>
+        <section className='commentSectionContainer'>
+            <section className='commentSection'>
+                <Comments review_id={review_id} style={{ width: '100%' }}/>
+                <AddComment style={{ width: '100%' }} />
+            </section>
         </section>
-    </>
+    </div>
     );
 };

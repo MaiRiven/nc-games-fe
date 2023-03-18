@@ -3,8 +3,9 @@ import '../Style/App.css'
 
 export const Navbar = () => {
     return (
-    <nav>
+    <nav className="navbar">
         <Link className='link' to='/'>Home</Link>
+        <Link className="link" to={'/users'}>User Login</Link>
     </nav>
     );
 }

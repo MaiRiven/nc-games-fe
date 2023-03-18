@@ -1,6 +1,6 @@
 .App{
   text-align: center;
-  background-color: var(--dark-accent);
+  background-color: var(--light-shades);
   color: var(--dark-accent);
   display: flex;
   flex-direction: column;
@@ -29,6 +29,7 @@ header {
 .reviewCard {
   background-color: var(--light-shades);
   border-radius: 10px;
+  border: 1px solid var(--highlight-shade);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin: 20px;
   padding: 20px;
@@ -74,7 +75,7 @@ header {
 }
 
 .reviewCard:hover{
-  background-color: var(--light-accent);
+  background-color: var(--highlight-shade);
   color: var(--dark-shades);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -91,14 +92,15 @@ header {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center
+  text-align: center;
+  border:  1px solid var(--highlight-shade);
 }
 
 .indReview h2 {
   font-size: 1.5rem;
   margin: 10px 0;
   padding: 2px;
-  color: var(--dark-shades)
+  color: var(--dark-shades);
 }
 
 .indReview p {
@@ -128,6 +130,7 @@ header {
 
 .commentSection {
   margin-top: 20px;
+  border:  1px solid var(--highlight-shade);
 }
   
 .commentCard {
@@ -136,11 +139,18 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   padding: 10px;
+  border:  1px solid var(--highlight-shade);
+  text-align: left;
 }
-  
+
+.commentauthor{
+  text-align: left;
+  font-weight: bold;
+}
+
 .commentCard p {
   font-size: 1rem;
-  margin: 5px 0;
+  margin: 5px;
 }
   
 .commentBody {
@@ -160,12 +170,21 @@ header {
   margin: 0;
 }
 
+ul{
+  list-style-type: none;
+}
+
 .commentSection{
     background-color: var(--light-shades);
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.userimg{
+    height: 90px;
+    border-radius: 5px;
 }
 
 .reviewInfo {
@@ -185,7 +204,8 @@ header {
   margin: 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  border:  1px solid var(--highlight-shade);
 }
 
 .ReviewVoteButton img {
@@ -197,4 +217,40 @@ header {
   display: flex;
   margin-top: 5px;
   color: rgb(89, 8, 8);
+}
+
+.addComment {
+  background-color: var(--light-shades);
+  border-radius: 10px;
+  border: 1px solid var(--highlight-shade);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.addComment textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--highlight-shade);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  resize: vertical;
+}
+
+.addComment button {
+  background-color: var(--dark-shades);
+  color: var(--light-accent);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.addComment button:hover {
+  background-color: var(--dark-accent);
 }

@@ -100,7 +100,7 @@ header {
   font-size: 1.5rem;
   margin: 10px 0;
   padding: 2px;
-  color: var(--dark-shades);
+  color: var(--dark-accent);
 }
 
 .indReview p {
@@ -241,7 +241,7 @@ ul{
 }
 
 .addComment button {
-  background-color: var(--dark-shades);
+  background-color: var(--dark-accent);
   color: var(--light-accent);
   border: none;
   border-radius: 5px;
@@ -252,5 +252,54 @@ ul{
 }
 
 .addComment button:hover {
+  background-color: var(--dark-shades);
+}
+
+.users{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.usercardscontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.usercard {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  border: 1px solid var(--highlight-shade);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.usercard h3 {
+  font-size: 20px;
+  margin: 20px 0 10xp 0;
+}
+
+.userimg {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: center;
+}
+
+.sign-in {
   background-color: var(--dark-accent);
+  color: var(--light-accent);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sign-in:hover {
+  background-color: var(--dark-shades);
 }

@@ -19,14 +19,13 @@ export const Users = () => {
 
     return (
         <section className="users">
-            <h2>Log in</h2>
                 {isLoading ? 
                 ( <Loader /> ) : (
-                    <ul>
+                    <div className='usercardscontainer'>
                         {users.map((eachUser) => {
                             return <UserCard eachUser={eachUser} key={eachUser.name} />;
                         })}
-                    </ul>
+                    </div>
                 )}
         </section>
     );

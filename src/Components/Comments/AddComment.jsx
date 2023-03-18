@@ -16,7 +16,7 @@ export const AddComment = ({ setComments, review_id }) => {
         if (commentToPost.username === undefined || commentToPost.username.username === '') {
             setSubmitButton(false);
             setNewComment('');
-            setPlaceHolder('Users must sign in to post a comment :)');
+            setPlaceHolder('You must sign in to post a comment :)');
         } else {
             postComment(review_id, commentToPost).then(({ comment }) => {
                 setComments((currentComments) => {

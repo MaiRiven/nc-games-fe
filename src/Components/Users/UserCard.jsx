@@ -4,7 +4,7 @@ import { UserContext } from "../../contexts/Users";
 export const UserCard = ({ eachUser }) => {
     const { setUser } = useContext(UserContext);
     return (
-        <li className="userlist" key={eachUser.name}>
+        <div className="usercard" key={eachUser.name}>
         <h3>{eachUser.name}</h3>
             <img className='userimg' src={eachUser.avatar_url} alt="avatar" />
         <p>
@@ -12,6 +12,6 @@ export const UserCard = ({ eachUser }) => {
                 setUser(eachUser.username)
                 }}>Sign in</button>
         </p>
-    </li>
+    </div>
     );
 };

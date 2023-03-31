@@ -1,3 +1,5 @@
+## This is a work in progress and may not always be available to view
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
